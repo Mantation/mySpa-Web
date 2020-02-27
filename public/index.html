@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to mySpa - Official Website</title>
+    <link rel="icon" href="logo.jpg">
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/6.3.4/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/6.3.4/firebase-auth.js"></script>
+    <script defer src="/__/firebase/6.2.0/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/6.3.4/firebase-database.js"></script>
+    <script defer src="/__/firebase/6.3.4/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/6.3.4/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <!-- //additional scripts  -->
+    <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/floating-labels/">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <!-- styling -->
+    <link rel="stylesheet" href="/style.css">
+    <style>
+      *{font-family: sans-serif;
+      }
+</style>
+
+  </head>
+  <body>
+    <input type="hidden" id="identifier" name="welcome" value="welcome">
+    <div class = "main">
+        <div class="column" >
+            <main role="main" class="col-md-8 d-none d-md-block "style="width:500px;height:690px;">
+                <div class="container">
+                  <div class="row">
+                      <div class="container-fluid" style="text-align:center;">
+                          <div class="row">
+                              <div class="logiHeader ml-auto">
+                                  <input type="email" class="text-input" placeholder="username" id="username">
+                                  <input type="password" class="text-input " placeholder="password" id="password">
+                                  <button type="submit" class="btn btn-primary text-center" id="login" value="login" onclick="SignInUser()">Login</button>
+                                  <button class="btn btn-lg btn-primary text-center" type="submit" value="join" id="join" onclick="spaRegistration()" >Join</button>
+                            </div>
+                              <div class="col-md-12">
+                       </div>
+                      </div>
+                    </div>
+                  </div>
+              </main>
+        </div>
+    </div >
+    <script src="app.js" type="text/javascript">
+    </script>
+
+    <div id="dialog" class="modal fade text-center">
+        <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header" >
+                <h4 class="modal-title"><font color = "black">Register</font></h4>
+                <button class="closer" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <fieldset id="regcenter">
+                    <legend ></legend>
+                    <div class="row">
+                        <div class="col">
+                                <label for="spa">Spa's Name:<font color = "red"> *</font></label>
+                                <input type="text" id="spa" class="form-control" placeholder="enter spa name" maxlength = "50">
+                               </div>
+                    </div>
+                    <div class="row">
+                        <div class="col ">
+                                <label for="location">Location Indentifier:<font color = "red"> *</font></label>
+                                <input type="text" id="location" class="form-control" placeholder="enter spa's location" maxlength = "50">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col ">
+                            <label  type="text" for="reg_email" >Email:<font color = "red"> *</font></label>
+                            <input type="reg_email" class="form-control" placeholder="enter email" id="reg_email" maxlength = "50">
+                               </div>
+                    </div>
+                    <div class="row">
+                        <div class="col ">
+                            <label for="newpassword">Password:<font color = "red"> *</font></label>
+                            <input type="password" class="form-control" id="newpassword" placeholder="enter password">
+                               </div>
+                    </div>
+                    <div class="row">
+                        <div class="col ">
+                            <label for="confirm_password">Confirm Password:<font color = "red"> *</font></label>
+                            <input type="password" class="form-control" id="confirm_password" placeholder="confirm password">
+                               </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col text-center">
+                            <div class="block-team-member-1 rounded">
+                                <label for="propic">Spa's banner:<font color = "red"> *</font></label><br>
+                                <img class="img-fluid" id = "propic" width="200" height="100" src=""
+                                 alt="Click to add banner" onclick="showImage(this)" accept=".png, .jpg, .jpeg">
+                                 <input type="file" id="real-file" hidden="hidden"/>
+                              </div>
+                        </div>
+                    </div>
+                    <br>               
+                  <button class="btn btn-lg btn-primary btn-block text-center mb-3" type="submit" value="register" id="register" onclick="createUser()">Register</button>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div id="alertDialog" class="modal fade text-center">
+      <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: green !important" >
+              <h4 class="modal-title"><font color = "white">Message</font></h4>
+              <button class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <h5 id="response" ><font color = "orange">Information successfully submitted!</font></h5>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div id="progress" >
+      <img src="/images/loader.gif" class="img-fluid block-team-member-0" alt="" style="display:block;margin-left: auto;margin-right: auto;top: 50%;bottom: 50%;" width="100" height="100">
+  </div>
+  </body>
+</html>

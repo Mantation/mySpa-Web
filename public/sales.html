@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sales</title>
+    <!-- styling -->
+    <link rel="stylesheet" href="/test.css">
+    <style>
+      *{font-family: sans-serif;
+      }
+    </style>
+</head>
+<body>
+        <h5><font color = "purple"><strong>Company Financials</strong></font></h5>
+        <br>
+        <br>
+        <div class="row">
+                <div class="col mb-3">
+                        <label for="time">Time Frame:<font color = "red"> *</font></label>
+                        <select class="browser-default custom-select" id="time" onchange="SalesTimeFrame.call(this, event)">
+                            <option value="Daily" selected>Daily</option>
+                            <option value="Monthly">Monthly</option>
+                            <option value="Yearly">Yearly</option>
+                        </select>
+                </div>
+                <div class="col mb-3">
+                        <label id="yearfield" for="year">Year:<font color = "red"> *</font></label>
+                        <select class="browser-default custom-select" id="year" onchange="salesYMReload.call(this, event)"></select>
+                </div>
+              <div class="col mb-3">
+                  <label id="datefield" for="date">Date:<font color = "red"> *</font></label>
+                <input type="date" id="date" class="form-control" data-date="" data-date-format="YYYY MMMM DD" onchange="salesDayReload.call()">
+                <select class="browser-default custom-select" id="years" onchange="salesYearsReload.call(this, event)" hidden></select>
+              </div>
+          </div> 
+        <br>
+        <table id="dtBasicExample" class="table table-striped table-bordered table-sm thead-dark" cellspacing="0" width="100%">
+            <thead>
+              <tr class="table-active">
+                <th class="th-sm">Date
+                </th>
+                <th class="th-sm">Service Description
+                </th>
+                <th class="th-sm">Service Duration
+                </th>
+                <th class="th-sm">Service Time
+                </th>
+                <th class="th-sm">Therapist
+                </th>
+                <th class="th-sm">Client
+                </th>
+                <th class="th-sm">Service Price
+                </th>
+              </tr>
+            </thead>
+            <tbody id="salesTable">
+            </tbody>
+          </table>
+          <div class="row" >
+                <div class="col mb-3">
+                    <div style="height: 450px;width:303px;" >
+                            <br>
+                            <button class="btn btn-lg btn-secondary btn-block text-center mb-3" type="submit" value="print" id="print" onclick="printSales()">Print Sales</button>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                        <div style="height: 450px;width:303px;" >
+                        </div>
+                </div>
+                <div class="col mb-3">
+                    <div id="canvas-therapists" style="height: 900px;width:304px;">
+                            <table id="dtBasicExample" class="table table-striped table-bordered table-sm thead-dark" cellspacing="0" width="100%">
+                                    <thead>
+                                      <tr class="table-active">
+                                        <th class="th-sm">Therapist
+                                        </th>
+                                        <th class="th-sm">Sales Made
+                                        </th>
+                                      </tr>
+                                    </thead>
+                                    <tbody id="therapistsTable">
+                                    </tbody>
+                                  </table>
+                    </div>
+                </div>
+        </div>
+    
+</body>
+</html>

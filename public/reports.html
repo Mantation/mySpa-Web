@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reports</title>
+</head>
+<body>
+
+        <h5><font color = "purple"><strong>Dashboard</strong></font></h5>
+        <br>
+        <br>
+        <div class="row">
+                <div class="col mb-3">
+                        <label for="time">Time Frame:<font color = "red"> *</font></label>
+                        <select class="browser-default custom-select" id="time" onchange="timeFrame.call(this, event)">
+                            <option value="Daily" >Daily</option>
+                            <option value="Weekly">Weekly</option>
+                            <option value="Monthly">Monthly</option>
+                            <option value="Yearly" selected>Yearly</option>
+                        </select>
+                </div>
+                <div class="col mb-3">
+                        <label id="yearfield" for="year">Year:<font color = "red"> *</font></label>
+                        <select class="browser-default custom-select" id="year" onchange="yearMonthReload.call()"></select>
+                </div>
+              <div class="col mb-3">
+                  <label id="datefield" for="date">Date:<font color = "red"> *</font></label>
+                <input type="date" id="date" class="form-control" data-date="" data-date-format="YYYY MMMM DD" onchange="dayWeeklyReload.call()">
+              </div>
+          </div> 
+        <br>
+        <div class="row" >
+                <div class="col mb-3">
+                    <div id="canvas-hour" style="height: 450px;width:450px;" >
+                        <canvas id="hoursChart" width="350" height="350" >
+                        </canvas>
+                    </div>
+                </div>
+                <br>
+                <div class="col mb-3">
+                    <div id="canvas-performance" style="height: 450px;width:450px;">
+                        <canvas id="performanceChart" width="350" height="350">
+                        </canvas>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                        <div id="canvas-services" style="height: 450px;width:900px;">
+                            <canvas id="servicesChart" width="900" height="350">
+                            </canvas>
+                        </div>
+                    </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <div id="canvas-therapistPerformance" style="width:450px;">
+                        <canvas id="allHoursChart" width="300" height="300" >
+                        </canvas>
+                        <br>
+                        <ol id="hoursList"><font color = "purple"><strong>Most Impacted Months for the year</strong></font>
+                            <hr>
+                        </ol>
+                </div>
+            </div>
+            <br>
+            <div class="col mb-3">
+                    <div id="canvas-treatmentPerformance" style="width:450px;">
+                        <canvas id="allTreatmentChart" width="300" height="300" >
+                        </canvas>
+                        <br>
+                        <ol id="TreatmentList"><font color = "purple"><strong>Treatment Contribution per year</strong></font>
+                            <hr>
+                        </ol>
+                    </div>
+            </div>
+            <br>
+        </div>
+        
+</body>
+</html>

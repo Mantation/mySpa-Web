@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Offline</title>
+    <!-- styling -->
+    <style>
+        *{font-family: sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-light">
+        <div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+                <div class="offline text-center">
+                        <h4>Oops, something went wrong!</h4>
+                        <img class="img-fluid" style="display:block;margin-left: auto;margin-right: auto;top: 50%;bottom: 50%;" width="200" height="200"  src="/images/offline.png"alt="User picture">
+                        <button class="btn btn-secondary text-center" type="submit" value="reload" style="width: 200px;"  id="reload" onclick="Reload()" >Reload</button>
+                </div>
+            </div>
+            <div id="progress" >
+                <img src="/images/loader.gif" class="img-fluid block-team-member-0" alt="" style="display:block;margin-left: auto;margin-right: auto;top: 50%;bottom: 50%;" width="100" height="100">
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+    <script type="text/javascript">
+    function Reload(){
+        $("progress").show();
+        window.location.href = "https://myspa-5b893.firebaseapp.com/main.html";
+        //window.location.href = "http://localhost:5000/main.html";
+
+    }
+    </script>
+    
+</body>
+</html>

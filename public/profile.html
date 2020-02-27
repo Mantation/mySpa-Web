@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Company Profile</title>
+    <!-- styling -->
+    <link rel="stylesheet" href="/test.css">
+    <style>
+      *{font-family: sans-serif;
+      }
+</style>
+</head>
+<body>
+    <input type="hidden" id="identifier" name="header" value="header">
+    <legend></legend>
+    <fieldset class="text-white ">
+            <legend class="text-white"></legend>
+                <div hidden>
+                <button class="btn btn-lg btn-dark text-light text-right float-right" type="submit" value="add" id="add" onclick="viewPasswordChangeWindow()">Change password</button>
+                </div>
+                <h3><font color = "black"><strong>Company Information</strong></font></h3>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <img id = "propic" class="img-fluid block-team-member-1 rounded" width="200" height="100" 
+                            alt="User picture" onclick="showImage(this)" accept=".png, .jpg, .jpeg"><br>
+                                    <a id="info"></a>
+                            <input type="file" id="real-file" hidden="hidden"/>
+                        </div>
+                        <div class="col">
+                                <input type="hidden" id="profileImage" name="profileImage" value="profileImage"><br>
+                        </div>
+                    </div> 
+                    <hr>
+                    <h4><font color = "purple"><strong>Profile Information</strong></font></h4>
+                    <hr>
+                    <div class="col text-secondary">
+                            <label type="text" for="name" >Spa's name:<font color = "red"> *</font></label>
+                            <input type="text" class="form-control" placeholder="enter spa's name" id="name" maxlength = "50">
+                    </div>
+                    <div class="col text-secondary">
+                            <label type="text" for="location" >Spa's location:<font color = "red"> *</font></label>
+                            <input type="text" class="form-control" placeholder="enter spa's location" id="location" maxlength = "50">
+                    </div>
+                    <br>
+                    <h4><font color = "purple"><strong>Contact Information</strong></font></h4>
+                    <hr>
+                    <div class="col text-secondary">
+                            <label  type="text" for="email" >Email:<font color = "red"> *</font></label>
+                            <input type="email" class="form-control" placeholder="enter email" id="email" maxlength = "50">
+                    </div>
+                    <div class="col text-secondary">
+                            <label for="phone">Phone number:<font color = "red"> *</font></label>
+                            <input type="phone" id="phone" class="form-control" placeholder="enter phone number"
+                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                            type = "number"
+                                            maxlength = "10">
+                    </div>
+                    <div class="col text-secondary">
+                            <label for="altphone">Alternate phone number:<font color = "red"> *</font></label>
+                            <input type="phone" id="altphone" class="form-control" placeholder="enter alternate phone number"
+                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                            type = "number"
+                                            maxlength = "10">
+                    </div>
+                    <br>
+                    <h4><font color = "purple"><strong>Address Information</strong></font></h4>
+                    <hr>
+                    <div class="col text-secondary">
+                            <label for="physical">Physical address:<font color = "red"> *</font></label>
+                            <textarea class="form-control" id="physical" rows="3" minlength="15" maxlength="100" placeholder="enter physical address"></textarea>
+                    </div>
+                    <div class="col text-secondary">
+                            <label for="postal">Postal address:<font color = "red"> *</font></label>
+                            <textarea class="form-control" id="postal" rows="3" minlength="15" maxlength="100" placeholder="enter postal address"></textarea>
+                        </div>
+            </div>
+        <button class="btn btn-lg btn-primary btn-block text-center mb-3" type="submit" value="userdetails" id="update" onclick='updateSpaDetails()'>Update</button>
+    </fieldset>
+
+    <div id="dialogPassword" class="modal fade text-center">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                      <div class="modal-header bg-dark" >
+                        <h4 class="modal-title" ><font color = "white" >Update password</font></h4>
+                        <button id="close" class="close text-light" data-dismiss="modal">&times;</button>
+                      </div>
+                      <div class="modal-body">
+                        <fieldset id="passwordCenter" class="text-left">
+                            <div class="row">
+                                <div class="col ">
+                                        <label for="currentpass">Enter password:<font color = "red"> *</font></label>
+                                        <input type="password" id="currentpass" class="form-control" placeholder="enter current password">
+                               </div>
+                             </div>
+                             <div class="row">
+                                <div class="col ">
+                                        <label for="newpassword">Enter new password:<font color = "red"> *</font></label>
+                                        <input type="password" class="form-control" id="newpassword" placeholder="enter password">
+                               </div>
+                            </div>
+                            <div class="row">
+                                <div class="col ">
+                                        <label for="confirm_password">Confirm Password:<font color = "red"> *</font></label>
+                                        <input type="password" class="form-control" id="confirm_password" placeholder="confirm password">
+                                </div>
+                           </div>
+                        </fieldset>
+                        <br>
+                        <button class="btn btn-lg btn-success btn-block text-center mb-3" type="submit" value="update" id="update" onclick="upDatePassword()">Update Password</button>
+                    </div>
+                </div>
+              </div>
+            </div>
+  
+    
+</body>
+</html>

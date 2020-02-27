@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Verify Account - mySpa</title>
+    <link rel="icon" href="logo.jpg">
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+      <!-- update the version number as needed -->
+      <script defer src="/__/firebase/6.3.0/firebase-app.js"></script>
+      <!-- include only the Firebase features as you need -->
+      <script defer src="/__/firebase/6.3.0/firebase-auth.js"></script>
+      <script defer src="/__/firebase/6.2.0/firebase-firestore.js"></script>
+      <script defer src="/__/firebase/6.3.0/firebase-database.js"></script>
+      <script defer src="/__/firebase/6.3.0/firebase-messaging.js"></script>
+      <script defer src="/__/firebase/6.3.0/firebase-storage.js"></script>
+      <!-- initialize the SDK after all desired features are loaded -->
+      <script defer src="/__/firebase/init.js"></script>
+      <!-- //additional scripts  -->
+      <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-firestore.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-auth.js"></script>
+       <!-- Bootstrap core CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/floating-labels/">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <!-- styling -->
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        *{font-family: sans-serif;
+        }
+  </style>
+</head>
+<body>
+        <body class = "text-center" >
+                <div class="reauth">
+                        <h4>Kindly click on the link supplied on your email to verify your account, alternatively go to the home page to re-register!</h4>
+                        <img class="img-fluid" style="display:block;margin-left: auto;margin-right: auto;top: 50%;bottom: 50%;" width="200" height="200"  src="/images/mail.png"alt="User picture">
+                        <button type="submit" class="btn btn-primary text-center" id="reverify" value="reverify" style="margin-left: auto;margin-right: auto;top: 50%;bottom: 50%; width: 200px;" onclick="reverify()">Resend Verification</button>
+                        <button class="btn btn-secondary text-center" type="submit" value="re-reg" style="margin-left: auto;margin-right: auto;top: 50%;bottom: 50%; width: 200px;"  id="re-reg" onclick="Home()" >Home</button>
+                </div>
+            <body>
+                <script src="app.js">
+                  </script>
+    <script>
+        function Home(){
+            window.location.href = "https://myspa-5b893.firebaseapp.com/";
+        }
+         //DialogMessage on Error
+        function closeDialogShowError(errorMessage){
+            //hide message dialog
+            $("#progress").hide();
+            //change modal attributes & show it
+            $('#alertDialog').modal('show');
+            var Response = document.getElementById("response");
+            Response.innerHTML = errorMessage;
+            Response.value = errorMessage;
+            //$('#response').val(errorMessage);
+            $('.modal-header').css('background-color', 'red');
+        }
+        //DialogMessage on Success
+        function closeDialogShowSuccess(){
+            //hide message dialog
+            $("#progress").hide();
+            //show modal
+            $('#alertDialog').modal('show');
+            var Response = document.getElementById("response");
+            Response.innerHTML = "Email verification link successfully sent!";
+            Response.value = "Information successfully submitted!";
+            $('.modal-header').css('background-color', 'green');
+        }
+        </script>
+
+      <div id="alertDialog" class="modal fade text-center">
+        <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header" style="background-color: green !important" >
+                <h4 class="modal-title"><font color = "white">Message</font></h4>
+                <button class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <h5 id="response" ><font color = "orange">Information successfully submitted!</font></h5>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div id="progress" >
+          <img src="/images/loader.gif" class="img-fluid block-team-member-0" alt="" style="display:block;margin-left: auto;margin-right: auto;top: 50%;bottom: 50%;" width="100" height="100">
+   </div>
+    
+</body>
+</html>

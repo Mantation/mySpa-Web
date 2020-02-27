@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Official Site</title>
+    <link rel="icon" href="logo.jpg">
+     <!-- page-wrapper -->
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+    <!--<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>-->
+    <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>-->
+     <!-- update the version number as needed -->
+    <script defer src="/__/firebase/6.3.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/6.3.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/6.2.0/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/6.3.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/6.3.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/6.3.0/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <!-- //additional scripts  -->
+    <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-auth.js"></script>
+     <!-- Bootstrap core CSS -->
+     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/floating-labels/">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="/test.css">
+    <!--ChatJs-->
+    <link rel="stylesheet" type="text/css" href="path/to/chartjs/dist/Chart.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js" charset="utf-8"></script>
+    <!-- //DataTable scripts  -->
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <script src='//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js'></script>
+    
+    <style>
+            *{font-family: sans-serif;
+            }
+    </style>
+</head>
+<body class="box-shadow bg-dark">
+    <input type="hidden" id="identifier" name="main" value="main">
+    </div>
+    <div class="page-wrapper chiller-theme toggled">
+        <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+          <i class="fas fa-bars"></i>
+        </a>
+        <nav id="sidebar" class="sidebar-wrapper">
+          <div class="sidebar-content">
+            <div class="sidebar-header">
+              <div class="block-team-member-1 rounded">
+                <a href="#"> <img class="img-fluid" id = "propic_main" width="200" height="100" src=""
+                  alt="User picture" onclick="viewProfile()"></a>
+              </div>
+              <div class="user-info">
+                <span class="user-name" id="emp_name">
+                  <strong id="emp_surname"></strong>
+                </span>
+                <span class="user-role" id="emp_no"></span>
+                <span class="user-role" id="emp_role"></span>
+                <span class="user-status">
+                  <i class="fa fa-circle"></i>
+                  <span>Online</span>
+                </span>
+              </div>
+            </div>
+            <!-- sidebar-header  -->
+            <div class="sidebar-search">
+              <div>
+                <div class="input-group">
+                  <input type="text" class="form-control search-menu" placeholder="Search..." disabled>
+                  <div class="input-group-append">
+                    <span class="input-group-text">
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- sidebar-search  -->
+            <div class="sidebar-menu">
+              <ul id="navlist">
+                <li class="header-menu" disabled>
+                      <span>Report</span>
+                </li>
+                <li class="sidebar-dropdown">
+                    <a href="#" id="viewReport" onclick="viewReports();">
+                      <i class="fas fa-signal"></i>
+                      <span>Dashboard</span>
+                    </a>
+                    <div class="sidebar-submenu">
+                      <ul>
+                        <li>
+                          <a href="#">Products
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">Orders</a>
+                        </li>
+                        <li>
+                          <a href="#">Credit cart</a>
+                        </li>
+                      </ul>
+                    </div>
+                </li>
+                <li class="sidebar-dropdown">
+                  <a href="#" id="viewSales" onclick="viewSales();">
+                    <i class="far fa-money-bill-alt"></i>
+                    <span>Financials</span>
+                  </a>
+                  <div class="sidebar-submenu">
+                    <ul>
+                      <li>
+                        <a href="#">Products
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">Orders</a>
+                      </li>
+                      <li>
+                        <a href="#">Credit cart</a>
+                      </li>
+                    </ul>
+                  </div>
+              </li>
+                <li class="header-menu" disabled>
+                  <span>General</span>
+                </li>
+                <li class="sidebar-dropdown active bg-primary">
+                    <a href="#" id="viewbookings" onclick="viewBookings();">
+                      <i class="fa fa-calendar-check"></i>
+                      <span>Bookings</span>
+                    </a>
+                    <div class="sidebar-submenu">
+                      <ul>
+                        <li>
+                          <a href="#">Products
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">Orders</a>
+                        </li>
+                        <li>
+                          <a href="#">Credit cart</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                <li class="sidebar-dropdown">
+                    <a href="#" id="viewclients" onclick="viewClients()">
+                      <i class="fa fa-users"></i>
+                      <span>Clients</span>
+                      <span id="emp_notifyer"></span>
+                    </a>
+                    <div class="sidebar-submenu">
+                      <ul>
+                        <li>
+                          <a href="#">Products
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">Orders</a>
+                        </li>
+                        <li>
+                          <a href="#">Credit cart</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                <li class="sidebar-dropdown">
+                    <a href="#" id="viewbeuaticians" onclick="viewBeauticians()">
+                      <i class="fa fa-user"></i>
+                      <span>Therapists</span>
+                    </a>
+                    <div class="sidebar-submenu">
+                      <ul>
+                        <li>
+                          <a href="#">Products
+        
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">Orders</a>
+                        </li>
+                        <li>
+                          <a href="#">Credit cart</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="sidebar-dropdown">
+                      <a href="#" id="viewservices" onclick="viewServices()">
+                        <i class="fas fa-wrench"></i>
+                        <span>Services</span>
+                        <!--<span class="badge badge-pill badge-warning">New</span>-->
+                      </a>
+                      <div class="sidebar-submenu">
+                        <ul>
+                          <li>
+                            <a href="#">Dashboard 1
+                              <span class="badge badge-pill badge-success">Pro</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">Dashboard 2</a>
+                          </li>
+                          <li>
+                            <a href="#">Dashboard 3</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                    <li class="sidebar-dropdown">
+                      <a href="#" id="viewbirthdays" onclick="viewBirthdays()">
+                        <i class="fa fa-birthday-cake"></i>
+                        <span>Birthdays</span>
+                        <span id="bday_notifyer"></span>
+                        <!--<span class="badge badge-pill badge-warning">New</span>-->
+                      </a>
+                      <div class="sidebar-submenu">
+                        <ul>
+                          <li>
+                            <a href="#">Dashboard 1
+                              <span class="badge badge-pill badge-success">Pro</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">Dashboard 2</a>
+                          </li>
+                          <li>
+                            <a href="#">Dashboard 3</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                <li class="sidebar-dropdown">
+                  <a href="#" id="viewconsultations" onclick="viewConsultations()">
+                    <i class="fa fa-hospital"></i>
+                    <span>Consultations</span>
+                    <!--<span class="badge badge-pill badge-warning">New</span>-->
+                  </a>
+                  <div class="sidebar-submenu">
+                    <ul>
+                      <li>
+                        <a href="#">Dashboard 1
+                          <span class="badge badge-pill badge-success">Pro</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">Dashboard 2</a>
+                      </li>
+                      <li>
+                        <a href="#">Dashboard 3</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                    <li class="sidebar-dropdown">
+                        <a href="#" id="viewratings" onclick="viewRatings()">
+                          <i class="fas fa-quidditch"></i>
+                          <span>Performance</span>
+                          <!--<span class="badge badge-pill badge-warning">New</span>-->
+                        </a>
+                        <div class="sidebar-submenu">
+                          <ul>
+                            <li>
+                              <a href="#">Dashboard 1
+                                <span class="badge badge-pill badge-success">Pro</span>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#">Dashboard 2</a>
+                            </li>
+                            <li>
+                              <a href="#">Dashboard 3</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li>
+                    <a href="#" id="profile" onclick="viewProfile()">
+                        <i class="fa fa-cog"></i>
+                        <span>Company Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="logout" onclick="logOut()">
+                      <i class="fa fa-power-off"></i>
+                      <span>Log out</span>
+                    </a>
+                  </li>
+              </ul>
+            </div>
+            <!-- sidebar-menu  -->
+          </div>
+          <!-- sidebar-content  -->
+          <div class="sidebar-footer">
+            <a href="#" id="settingFooter" onclick="alertFooterBirthdays()">
+              <i class="fa fa-bell"></i>
+              <span id="notifications"></span>
+            </a>
+            <!--<a href="#">
+              <i class="fa fa-envelope"></i>
+              <span class="badge badge-pill badge-success notification">7</span>
+            </a>-->
+            <a href="#" id="alertFooter" onclick="settingsFooterProfile()">
+              <i class="fa fa-cog"></i>
+              <span class="badge-sonar"></span>
+            </a>
+            <a href="#" onclick="logOut()">
+              <i class="fa fa-power-off"></i>
+            </a>
+          </div>
+        </nav>
+        <div class="headerPage" style="background-color: #3a3f48 !important">
+         </div>
+         <main class="page-content" style="background-color: #3a3f48 !important">
+                <div class="main card mb-8" id="mainwindow"  style="background-color: #3a3f48 !important;">
+                </div>
+        </main>
+      </div>
+      <script type="text/javascript">
+        function alertFooterBirthdays(){
+          var Birthdays = document.getElementById('viewbirthdays');
+          Birthdays.click();
+        }
+        </script>
+        <script type="text/javascript">
+          function settingsFooterProfile(){
+            var Profile = document.getElementById('profile');
+            Profile.click();
+          }
+          </script>
+      <script type="text/javascript">
+      $(document).on('click','#navlist li',function(){
+        $(this).addClass('sidebar-dropdown active bg-primary text-white').siblings().removeClass('sidebar-dropdown active bg-primary text-white');
+      })
+      </script>
+      <script type="text/javascript">
+        $(document).on('click','#users_list li a',function(){
+          $(this).removeClass('bg-light text-muted');
+          $('#users_list li a').removeClass('active bg-secondary text-light');
+          $(this).addClass('active bg-secondary text-light').siblings().removeClass('active bg-secondary text-light');
+        })
+      </script>
+      <script type="text/javascript">
+          function searchName() {
+            // Declare variables
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById('search');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("users_list");
+            li = ul.getElementsByTagName('li');
+          
+            // Loop through all list items, and hide those who don't match the search query
+            for (i = 0; i < li.length; i++) {
+              a = li[i].getElementsByTagName("a")[0];
+              txtValue = a.textContent || a.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+              } else {
+                li[i].style.display = "none";
+              }
+            }
+          }
+          </script>
+      <script src="app.js">
+      </script>
+      <div id="alertDialog" class="modal fade text-center">
+        <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header" style="background-color: green !important" >
+                <h4 class="modal-title"><font color = "white">Message</font></h4>
+                <button class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <h5 id="response" ><font color = "orange">Information successfully submitted!</font></h5>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div id="progress" >
+          <img src="/images/loader.gif" class="img-fluid block-team-member-0" alt="" style="display:block;margin-left: auto;margin-right: auto;top: 50%;bottom: 50%;" width="100" height="100">
+   </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    /*function loadPages(){
+    var header = document.getElementsByClassName("headerPage");
+    var mainSection = document.getElementsByClassName("main");
+    header.load("header.html");
+    main.load("/emp/allpatients.html")
+    $('#dtBasicExample').DataTable();
+    }
+    loadPages();*/
+    $(document).ready(function(){
+      $("#progress").show();
+      //$(".headerPage").load("header.html");
+      var MainWindow = document.getElementById("mainwindow");
+      MainWindow.style.backgroundColor = "#FFFFFF";
+      $(".headerPage").hide();
+      //$(".main").load("/emp/allpatients.html");
+      $(".main").load("/bookings.html",function(){
+        $(document).ready(
+            function(){
+              //setEmployeesToDataTable();
+              //$('#dtBasicExample').DataTable();
+            $("#progress").hide();
+            //$(".headerPage").hide();
+            //var MainWindow = document.getElementById("mainwindow");
+            //MainWindow.style.backgroundColor = "#FFFFFF";
+            //get the selected date
+            var selectedDate = document.getElementById("date");
+            selectedDate.value = getCurrentDate().replace(/\//g,'-');
+            //Bookings();
+            //viewBookings();
+            });
+          });
+    });
+</script>

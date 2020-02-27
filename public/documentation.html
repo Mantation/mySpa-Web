@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Official mySpa documentation</title>
+    <link rel="icon" href="logo.jpg">
+    <!-- page-wrapper -->
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <!-- Bootstrap core CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/floating-labels/">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="/test.css">
+    <style>
+        *{
+          font-family: sans-serif;
+        }
+        html {
+  height: 100%;                       /* note #1 */
+}
+body {
+  height: 100%;                       /* note #1 */
+  margin: 0;
+  overflow: hidden;                          /* note #2 */
+}
+#categorySection{
+  overflow-y: scroll;
+  height: 100%;
+  height:100vh;
+}
+#definitionSection{
+  overflow-y: scroll;
+  height: 100%;
+  height:100vh;
+}
+ul {
+  list-style-type: none;
+}
+a:active {
+  color: green;
+}
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+</style>
+</head>
+<body >
+        <body class="bg-dark">
+            <main>
+                <div>
+                    <div id="categorySection" style="float: left; width: 25%;">
+                      <div class="container" >
+                        <section>
+                          <br>
+                            <h5 style="margin-left: 20%;color: white;margin-top: 30%;">General Services</h5>
+                            <ul style="margin-left: 20%;">
+                                <li><a href="#bookings">Bookings section</a></li>
+                                <li><a href="#clients">Clients section</a></li>
+                                <li><a href="#therapists">Therapists section</a></li>
+                                <li><a href="#services">Services section</a></li>
+                                <li><a href="#birthdays">Birthdays section</a></li>
+                                <li><a href="#consultaions">Consultations section</a></li>
+                                <li><a href="#performance">Performance section</a></li>
+                                <li><a href="#company">Company Profile section</a></li>
+                            </ul>
+                            <h5 style="margin-left: 20%;color: white;">General Reports</h5>
+                            <ul style="margin-left: 20%;">
+                                <li><a href="#dashbord">Dashbord section</a></li>
+                                <li><a href="#financials">Financials section</a></li>
+                            </ul>
+                        </section>
+                      </div>
+                    </div>
+                    <div class="row-fluid">
+                      <div id="definitionSection" class="bg-light" style="float: left; width: 75%">
+                        <div class="album py-5 bg-light">
+                          <div class="container" >
+                            <div class="row">
+                              <div id="mainCard" class="col-md-8" style="display:block;margin-left: auto;margin-right: auto;">
+                                    <h5><strong><font color = "blue">Documentation</font></strong><br> 
+                                        <span><small><strong>version no: 1.0.0<strong></small></span><br>
+                                        <span><small><strong>Release date - 11/2019<strong></small></span><br>
+                                        <span><small><strong>Reviewed - 11/2019<strong></small></span><br>
+                                        <span><small><strong><i>---user Guide</i><strong></small></span><br>
+                                    </h5>
+                                    <hr>
+                                    <br>
+                                    <h2 id="bookings" class="bg-dark"><font color = "white">Bookings Section</font></h2>
+                                    <p><h6>In this section you have a previewed window showing all <a href="#therapists">therapists</a> who are added within the spa & all the 
+                                        available times they can be booked on.<br><br><img class="img-fluid" width="800" height="900" align="middle" src="/images/bookingWindow.JPG" style="margin : 10px 10px 10px 10px;" alt="My Pic"><br><br>
+                                        <Medium class="bg-success"><font color = "white"><strong>Book OFFs </strong></font></medium><br><br>
+                                        User may want to book a particular <a href="#therapists">therapist</a> <strong><i>Off</i></strong><br><br>
+                                        by clicking on the name of the <a href="#therapists">therapist</a> to book him/her off for the day.<br><br>
+                                    <img class="img-fluid" width="800" height="900" align="left" src="/images/bookOff.JPG" style="margin : 10px 10px 10px 10px;"><br><br><a href="#therapists" alt="My Pic">Therapist</a> who have been booked off will be color-coded
+                                        & no work can be allocated under them for the day their booked off. Their allocated time frames will be grayed-out & their table allocation will be non-responsive (non-clickable)
+                                        & no <a href="#bookings">booking</a> will be allocated to such a <a href="#therapists">therapist</a>. See <strong><font color = "maroon">Khethi Kunutu</font></strong> below.<br><br>
+                                    <img class="img-fluid" width="800" height="900" align="left" src="/images/offIndication.JPG" style="margin : 10px 10px 10px 10px;"><br><br>
+                                        <Medium class="bg-success"><font color = "white"><strong>Book INs </strong></font></medium><br><br>
+                                    Re-booking the <a href="#therapists">therapist</a> <strong><i>In</i></strong> again for that day equally simple, click on his/her name, then book In, simple as that.<br><br>
+                                    <img class="img-fluid" width="800" height="900" align="left" src="/images/bookIn.JPG" style="margin : 10px 10px 10px 10px;"><br><br>
+                                        <Medium class="bg-success"><font color = "white"><strong>New Client Booking </strong></font></medium><br><br>
+                                        The core, the very heart & the soul of this invention is this section, the <a href="#bookings">Bookings Section</a>. There are a lot of functionalities
+                                        that make up what this system represents but in it's own, in it's very heart, what defines it is this section. <br><br>The <a href="#bookings">Bookings Section</a>
+                                        makes it possible for the user of this system to be on a call with a client & book him/her for a treatment, be it a new or existing client, be it a therapist 
+                                        of his/her choice or at random, the aim is to make everyone's life easier. A new Client makes a booking?<br><br>
+                                    <img class="img-fluid" width="800" height="900" align="left" src="/images/newClientBooking.JPG" style="margin : 10px 10px 10px 10px;"><br><br>
+                                        As you can see, our new client <font color = "maroon">Mr Soso Charmi</font> made a new booking of the above reflected treatment, for the amount shown,
+                                        on the chosen date, under his <a href="#therapist">therapist</a> of his choice. The nice thing about this is that after this booking <font color = "maroon">Mr Soso Charmi</font>
+                                        is no longer a new client in this organization, like many other organizations, the aim is to celebrate the new & acknowledge the existing. His information is saved on the system,
+                                        however, it is incomplete.<br><br>
+                                        A reminder on the system will always reflect (in a box on the far right next to the bookings table, under <font color = "red">Incomplete Profiles</font>) so that during <font color = "maroon">Mr Soso Charmi's</font> appointment, when he actually comes in person
+                                        all the required information can be acquired.<br><br>
+                                    <img class="img-fluid" width="800" height="900" align="left" src="/images/incompleteProfile.JPG" style="margin : 10px 10px 10px 10px;"><br><br>
+                                        To fill in the rest of our client's information takes just a simple click on his name under the <font color = "red">Incomplete Profiles</font> section <br><br>
+                                    <img class="img-fluid" width="800" height="900" align="left" src="/images/fillIncomplete.JPG" style="margin : 10px 10px 10px 10px;"><br><br>
+                                        <Medium class="bg-success"><font color = "white"><strong>Existing Client Booking </strong></font></medium><br><br>
+                                        Existing client's data should always be kept at all times, this allows business to do an effective CRM, birthday wishes, get a geographical aspect of their customers,
+                                        sexual orientation, services they use, what marketing campaign they respond to, are they satisfied, e.t.c .An Existing customer calling to make a booking should atleast
+                                        be as easy searching by typing his/her name, selecting him/her on the list & making a booking, Yes?<br><br>
+                                    <img class="img-fluid" width="800" height="900" align="left" src="/images/bookExisting.JPG" style="margin : 10px 10px 10px 10px;"><br><br>
+                                        <Medium class="bg-success"><font color = "white"><strong>Combo Booking </strong></font></medium><br><br>
+                                        A client might like to compile a booking of her own, design what she wants & pick treatments of her choice, the system allows the user to create what is refered to as a "Combo".
+                                        All the treatments the client chooses is added into a list, the amount is pre-calculated and the time is adjusted & allocated based on all treatments on the list.<br><br>
+                                        <img class="img-fluid" width="800" height="900" align="left" src="/images/combo.JPG" style="margin : 10px 10px 10px 10px;"><br><br>
+                                        <Medium class="bg-success"><font color = "white"><strong>Cancellations </strong></font></medium><br><br>
+                                        Cancellation of any booking is as easy as booking a therapist off, click on the client's booking in the booking table, then cancel Booking.<br><br>
+                                    <img class="img-fluid" width="800" height="900" align="left" src="/images/cancelBooking.JPG" style="margin : 10px 10px 10px 10px;"><br><br>
+                                        however, there might be an important question which made a client cancel his treatment, maybe he really didn't want to cancel 
+                                        but he wanted to reshedule, maybe something very important came up which clashed with his/her booking, there could be one of a million things. Just like the <font color = "red">Incomplete Profiles</font>
+                                        section, the system provides you with the <font color = "red">Cancellation Section</font> just above the <font color = "red">Incomplete Profiles</font> on the far right corner of the system.<br><br>
+                                    <img class="img-fluid" width="800" height="900" align="left" src="/images/cancelSection.JPG" style="margin : 10px 10px 10px 10px;"><br><br>
+                                        When accessed this allows you to have the client's information on display, you can either choose to call or email the client for follow-up. This depends on the information the client has supplied.<br><br>
+                                        <img class="img-fluid" width="800" height="900" align="left" src="/images/clientsContact.JPG" style="margin : 10px 10px 10px 10px;"><br><br>
+                                        <Medium class="bg-success"><font color = "white"><strong>Booking Amendment </strong></font></medium><br><br>
+                                        Should a client require to ammend a booking, change a date/time slot, reallocate a therapist of his/her own choice, choose a new treatment or add to an existing treatment on the
+                                        booking, The system enables the user to perform such a task with no or little hassles. Upon clicking the client's booking on the booking table, on the <font color = "red">Edit Booking</font>
+                                        section the user can easily alter a booking.<br><br>
+                                    <img class="img-fluid" width="800" height="900" align="left" src="/images/editbooking.JPG" style="margin : 10px 10px 10px 10px;"><br><br>
+                                        <Medium class="bg-success"><font color = "white"><strong>Therapist ratings </strong></font></medium><br><br>
+                                            A therapist can be rated upon which a treatment is over, a rating cannot be made prior or in the middle of a treatment, Only when the treatment is over & the user clicks on the 
+                                            said booking in the booking table.
+                                    <img class="img-fluid" width="800" height="900" align="left" src="/images/rating.JPG" style="margin : 10px 10px 10px 10px;"><br><br>
+                                        A rating done on a therapist will automatically change the color of such booking in the booking table from it's original <font color = "red">red</font> color to a default normal black color.
+                                        <img class="img-fluid" width="800" height="900" align="left" src="/images/ratingColor.JPG" style="margin : 10px 10px 10px 10px;"><br><br>
+                                     --<i>the booking section</i>--
+                                    </h6></p>
+                                    <hr>
+                                    <h2 id="clients" class="bg-dark"><font color = "white">Clients Section</font></h2>
+                                    <p><h6>
+                                        In this section all clients will be listed & shown on the <font color = "red">clients table</font>
+                                        <img class="img-fluid" width="800" height="900" align="left" src="/images/clientsList.JPG" style="margin : 10px 10px 10px 10px;"><br><br>
+                                        <Medium class="bg-success"><font color = "white"><strong>Capturing a Client </strong></font></medium><br><br>
+                                        A client is customer, a very important stakeholder to every organization, the <a href="#bookings">bookings</a> section gave an explicit insite in how the user utilizes clients information 
+                                        to make bookings as well as capturing their details. This section shows how the user captures a client outside the <a href="#bookings">bookings</a> section. Click <font color = "red">Add new</font>
+                                        <img class="img-fluid" width="800" height="900" align="left" src="/images/addNewClient.JPG" style="margin : 10px 10px 10px 10px;"><br><br>
+                                        <Medium class="bg-success"><font color = "white"><strong>Viewing/Ammending a Client </strong></font></medium><br><br>
+                                        The User can easily view or ammend any clients data by simply clicking on the <font color = "red">View</font><br><br>
+                                        <img class="img-fluid" width="800" height="900" align="left" src="/images/ammendClient.JPG" style="margin : 10px 10px 10px 10px;"><br><br>
+                                        --<i>the client section</i>--
+                                    </h6></p>
+                                    <hr>
+                                    <h2 id="therapists" class="bg-dark"><font color = "white">Therapists Section</font></h2>
+                                    <p><h6>
+                                        All therapists will be listed & shown on the <font color = "red">therapist table</font> in this section
+                                        <img class="img-fluid" width="800" height="900" align="left" src="/images/therapist.JPG" style="margin : 10px 10px 10px 10px;"><br><br>
+                                        <Medium class="bg-success"><font color = "white"><strong>Capturing a Therapist </strong></font></medium><br><br>
+                                        Click <font color = "red">Add new</font> then a therapist window that allows the User to capture a new therapist will be presented.
+                                        <img class="img-fluid" width="800" height="900" align="left" src="/images/addNewTherapist.JPG" style="margin : 10px 10px 10px 10px;"><br><br>
+                                        <Medium class="bg-success"><font color = "white"><strong>Viewing/Ammending a Therapist </strong></font></medium><br><br>
+                                        Click <font color = "red">View</font><br><br> of any therapist to view/ammend his/her details
+                                        <img class="img-fluid" width="800" height="900" align="left" src="/images/ammendTherapist.JPG" style="margin : 10px 10px 10px 10px;"><br><br>
+                                        <Medium class="bg-success"><font color = "white"><strong>Activating/Deactivating a Therapist </strong></font></medium><br><br>
+                                        Click <font color = "red">Activate/Deactivate</font><br><br> of any therapist to activate his/her status, If a therapist is inactive, her status will say <font color = "green">Inactive</font> & a green button
+                                        will be presented to activate him/her. If she her status is <font color = "red">Active</font> a red button will be presented to deactivate him/her.
+                                        <img class="img-fluid" width="800" height="900" align="left" src="/images/therapistActivate.JPG" style="margin : 10px 10px 10px 10px;"><br><br>
+                                        --<i>the therapist section</i>--
+                                    </h6></p>
+                                    <hr>
+                                    <h2 id="services" class="bg-dark"><font color = "white">Services Section</font></h2>
+                                    <p><h6>
+                                            Services are merely treatments, & all treatments will be visible on the <font color = "red">services table</font> in this section
+                                            <img class="img-fluid" width="800" height="900" align="left" src="/images/services.JPG" style="margin : 10px 10px 10px 10px;"><br><br>
+                                            <Medium class="bg-success"><font color = "white"><strong>Capturing a Service </strong></font></medium><br><br>
+                                            Click <font color = "red">Add new</font> then a service window that allows the User to capture a new service/treatment will be presented.
+                                            <img class="img-fluid" width="800" height="900" align="left" src="/images/addNewService.JPG" style="margin : 10px 10px 10px 10px;"><br><br>
+                                            <Medium class="bg-success"><font color = "white"><strong>Viewing/Ammending a Service </strong></font></medium><br><br>
+                                            Click <font color = "red">View</font> of any service to view/ammend it's details
+                                            <img class="img-fluid" width="800" height="900" align="left" src="/images/ammendService.JPG" style="margin : 10px 10px 10px 10px;"><br><br>
+                                            <Medium class="bg-success"><font color = "white"><strong>Activating/Deactivating a Therapist </strong></font></medium><br><br>
+                                            Click <font color = "red">Activate/Suspend</font> of any service to alter it's status. All the inactive treatments will have an option to <font color = "green">Activate</font> & a green button
+                                            will be presented to activate it. If the service is active then an option to <font color = "red">Suspend</font> & a red button will be presented to deactivate it.
+                                            <img class="img-fluid" width="800" height="900" align="left" src="/images/therapistActivate.JPG" style="margin : 10px 10px 10px 10px;"><br><br>
+                                            --<i>the services section</i>--
+                                    </h6></p>
+                                    <hr>
+                                    <h2 id="birthdays" class="bg-dark"><font color = "white">Birthdays Section</font></h2>
+                                    <p><h6>
+                                        <Medium class="bg-success"><font color = "white"><strong>Clients Birthdays' </strong></font></medium><br><br>
+                                        All the clients that on this day or within a week (7 days from now) are shown in the <font color = "red">birthdays table</font>. The User will see all
+                                        the upcoming birthdays, sending birthday wishes should he/she choses to or offer a birthday special or promotion.
+                                        An Icon which also counts these birthday will also show the user how many of the client's special day is upon us.
+                                        <img class="img-fluid" width="800" height="900" align="left" src="/images/birthdays.jpg" style="margin : 10px 10px 10px 10px;"><br><br>
+                                        --<i>the birthdays section</i>--
+                                    </h6></p>
+                                    <hr>
+                                    <h2 id="consultaions" class="bg-dark"><font color = "white">Consultations Section</font></h2>
+                                    <p><h6>
+                                        <Medium class="bg-success"><font color = "white"><strong>Clients Consultations</strong></font></medium><br><br>
+                                        All clients that have consulted or be treated will be shown on the <font color = "red">consultation table</font> together with the treatments they received.
+                                        The consultation section will present consultation per month for any & every year that is recorded in the system. The User can select between existing years. 
+                                        <img class="img-fluid" width="800" height="900" align="left" src="/images/consultations.JPG" style="margin : 10px 10px 10px 10px;"><br><br>
+                                        --<i>the consultation section</i>--
+                                    </h6></p>
+                                    <hr>
+                                    <h2 id="performance" class="bg-dark"><font color = "white">Performance Section</font></h2>
+                                    <p><h6>
+                                        <Medium class="bg-success"><font color = "white"><strong>Clients Consultations</strong></font></medium><br><br>
+                                        All the active <a href="#therapists">therapists</a> will be listed in the <font color = "red">therapists table</font> together with their ratings. If a therapist is
+                                        not rated then no rating will be shown. Ratings can only be recorded after a booking has elapsed.<br><br>
+                                        please refer to the <a href="#bookings">booking</a> section on how to rate a therapist.
+                                        <img class="img-fluid" width="800" height="900" align="left" src="/images/performance.JPG" style="margin : 10px 10px 10px 10px;"><br><br>
+                                        --<i>the performance section</i>--
+                                    </h6></p>
+                                    <hr>
+                                    <h2 id="company" class="bg-dark"><font color = "white">Company Profile Section</font></h2>
+                                    <p><h6>
+                                        <Medium class="bg-success"><font color = "white"><strong>Ammend Company Information</strong></font></medium><br><br>
+                                        This is a section where the user can view/update any company information that is needed.
+                                        <img class="img-fluid" width="800" height="900" align="left" src="/images/companyInfo.jpg" style="margin : 10px 10px 10px 10px;"><br><br>
+                                        --<i>the company section</i>--
+                                    </h6></p>
+                                    <hr>
+                                    <h2 id="dashbord" class="bg-dark"><font color = "white">Dashboard Section</font></h2>
+                                    <p><h6>
+                                        The Dashboard allows the user view the following per <font color = "red">year/month/week/day</font><br><br>
+                                        <Medium class="bg-success"><font color = "white"><strong>Dashboard Categories</strong></font></medium><br><br>
+                                        The Dashboard section gives an overview  of :<br><br> 1. The amount of work put in by each therapist <br>2. Days of the week, most active vs not active <br>3. Services which are performing vs under-performing.<br><br>
+                                        <img class="img-fluid" width="800" height="900" align="left" src="/images/dashboard1.JPG" style="margin : 10px 10px 10px 10px;"><br><br>
+                                        4. Most impacted months within the selected year. <br>5. Treatments which were mostly impacted.<br><br>
+                                        <img class="img-fluid" width="800" height="900" align="left" src="/images/dashboard2.JPG" style="margin : 10px 10px 10px 10px;"><br><br>
+                                        --<i>the dashboard section</i>--
+                                    </h6></p>
+                                    <hr>
+                                    <h2 id="financials" class="bg-dark"><font color = "white">Financials Section</font></h2>
+                                    <p><h6>
+                                        The financials section allows the user to view/cash out at End of Business day or at any of this supplied choices to his/her exposal.<font color = "red">1.Yearly. 2.monthly. 3.Daily.</font><br><br>
+                                        <Medium class="bg-success"><font color = "white"><strong>Company Financials</strong></font></medium><br><br>
+                                        Financials are presented, viewed & even printable. Financials can be viewed per day, per month or per year depending on the Users requirement.
+                                        <img class="img-fluid" width="800" height="900" align="left" src="/images/financials.JPG" style="margin : 10px 10px 10px 10px;"><br><br>
+                                        --<i>the financials section</i>--
+                                    </h6></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                           <!-- Footer -->
+                          <footer class="page-footer font-small special-color-dark pt-4">
+                              <!-- Copyright -->
+                              <div class="footer-copyright text-center py-3">© 2019 Copyright:
+                                <a href="http://eyecconsulting.co.za/"> eyecconsulting</a>
+                              </div>
+                          </footer>
+                      </div>
+                    </div>
+                </div>
+              </main>
+              <script type="text/javascript">
+                $(document).on('click','ul li a',function(){
+                  $(this).removeClass('bg-light text-muted');
+                  $('ul li a').removeClass('active bg-success text-light');
+                  $(this).addClass('active bg-success text-light').siblings().removeClass('active bg-success text-light');
+                })
+              </script>        
+</body>
+</html>
